@@ -47,3 +47,25 @@ Nous pourrons aussi, si le temps nous le permet augmenter l'architecture avec un
    J-->G;
    
 ```
+
+
+## ProGAN
+
+Le ProGAN est un GAN que l'on fait progressivement grossir a chaque étape.
+
+On commence par générer des images 4x4 avec un block de génération, puis, après un premier entrainement, on ajoute un block commençant par un Upsampling doublant la résolution, et un Layer d'interpolation.
+
+Ce modèle a été utilisé pour générer des images de haute qualité.
+
+[Publication de recherche](https://arxiv.org/pdf/1710.10196)
+
+[source de l'implementation utilisée](https://github.com/DCtheTall/tf-keras-progressive-gan/blob/master/colab/progressive_gan.ipynb)
+
+## Architecture
+
+```mermaid
+   graph TD;
+   START("Latent")-->A("4x4")
+
+   style START fill:#FFFFFF00, stroke:#FFFFFF00;
+```
