@@ -65,7 +65,20 @@ Ce modèle a été utilisé pour générer des images de haute qualité.
 
 ```mermaid
    graph TD;
-   START("Latent")-->A("4x4")
+   START("Bloc de Générateur") --> A
 
    style START fill:#FFFFFF00, stroke:#FFFFFF00;
+```
+
+```mermaid
+   graph TD;
+   START("Gen 1") -- Latent -->A("4x4 Generator")
+   A-- 4x4 Generator Output -->B("4x4 Discriminator")
+   STARTB("Gen 2")-- Latent -->C("4x4 Generator")
+   C-->D("8x8 Generator")
+   D-- 8x8 Generator Output --> E("8x8 Discriminator")
+   E-->F("4x4 Discriminator")
+
+   style START fill:#FFFFFF00, stroke:#FFFFFF00;
+   style STARTB fill:#FFFFFF00, stroke:#FFFFFF00;
 ```
