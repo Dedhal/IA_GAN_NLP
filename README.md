@@ -96,7 +96,7 @@ Dans ce contexte, nous utilisons le CycleGAN pour apprendre la transformation en
    B --> C("GAN Spécialisé Altéré")
 
    style START fill:#FFFFFF00, stroke:#FFFFFF00;
-
+```
 
 ```mermaid
    graph TD;
