@@ -82,3 +82,37 @@ Ce modèle a été utilisé pour générer des images de haute qualité.
    style START fill:#FFFFFF00, stroke:#FFFFFF00;
    style STARTB fill:#FFFFFF00, stroke:#FFFFFF00;
 ```
+## CycleGAN
+Le CycleGAN est un modèle de réseau génératif utilisé pour apprendre la correspondance entre deux ensembles de données sans correspondance directe. 
+
+Dans ce contexte, nous utilisons le CycleGAN pour apprendre la transformation entre les images générées par les GAN spécialisés et les versions altérées de ces images.
+
+## Architecture
+
+```mermaid
+   graph TD;
+   START("GAN Spécialisé") --> A
+   A --> B("Altération")
+   B --> C("GAN Spécialisé Altéré")
+
+   style START fill:#FFFFFF00, stroke:#FFFFFF00;
+
+
+```mermaid
+  graph TD;
+   A("Transformer Classifier")-->B("GAN Spécialisé");
+   A-->C("GAN Spécialisé");
+   A-->D("GAN Spécialisé");
+   A-->E("...");
+   A-->F("Altération<br>Cycle GAN");
+   B-->F;
+   C-->H("Altération<br>Cycle GAN");
+   A-->H;
+   D-->I("Altération<br>Cycle GAN");
+   A-->I;
+   E-->J("...");
+   A-->J;
+   F-->G("Output");
+   H-->G;
+   I-->G;
+   J-->G;
