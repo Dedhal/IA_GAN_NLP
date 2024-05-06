@@ -99,7 +99,7 @@ Dans ce contexte, nous utilisons le CycleGAN pour apprendre la transformation en
 
 
 ```mermaid
-  graph TD;
+   graph TD;
    A("Transformer Classifier")-->B("GAN Spécialisé");
    A-->C("GAN Spécialisé");
    A-->D("GAN Spécialisé");
